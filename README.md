@@ -23,3 +23,18 @@ takeown /f "c:\folder\subfolder" /r
 ```
 attrib -r "c:\folder\subfolder\*.*"" /s
 ```
+
+* ### Uninstall any software with "Toolbar" in the name.
+```
+(gwmi Win32_Product | where {$_.name -like "*toolbar*"}).uninstall()
+```
+
+* ### Skip Windows Update and Shutdown Now.
+```
+shutdown /s /t 0
+```
+
+* ### Find locked AD accounts and unlock them.
+```
+search-adaccount -lockedout | unlock-adaccount
+```
