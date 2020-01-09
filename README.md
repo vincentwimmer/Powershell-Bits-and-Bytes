@@ -19,7 +19,7 @@ Connect-VMNetworkAdapter -VMName NameOfVM -SwitchName VNet
 takeown /f "c:\folder\subfolder" /r
 ```
 
-* ### Recursively remove Read-Only attribute of root and subfolders:
+* ### Recursively remove Read-Only attribute of root and subfolders/files:
 ```
 attrib -r "c:\folder\subfolder\*.*"" /s
 ```
