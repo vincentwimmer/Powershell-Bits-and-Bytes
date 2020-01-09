@@ -1,6 +1,5 @@
 # Handy-Powershell-One-Liners
 
----
 
 ### Get CName from IPv4 Address:
 ```
