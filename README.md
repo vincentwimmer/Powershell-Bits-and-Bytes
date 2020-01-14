@@ -6,6 +6,13 @@
 [System.Net.Dns]::GetHostByAddress('ip.add.re.ss').HostName
 ```
 
+* ### Slowdown the output of commands:
+> To use:
+> - Any-Command | SlowView
+```
+function SlowView { process { $_; Start-Sleep -seconds 1}}
+```
+
 * ### Disconnect/Connect HyperV VM's network:
 ```
 Disconnect-VMNetworkAdapter NameOfVM
