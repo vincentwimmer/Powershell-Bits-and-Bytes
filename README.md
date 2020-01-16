@@ -45,3 +45,9 @@ shutdown /s /t 0
 ```
 search-adaccount -lockedout | unlock-adaccount
 ```
+
+* ### Gather all Windows 7 computers in Active Directory and populate a spread sheet.
+> Great for migrating from End-of-Life!
+```
+Get-ADComputer -LDAPFilter '(operatingSystem=*Windows 7*)'  -Properties * | Select -Property Name,DNSHostName,operatingSystem | Export-CSV "C:\Users\%username%\Desktop\Windows7Computers.csv"
+```
