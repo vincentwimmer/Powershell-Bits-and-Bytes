@@ -51,3 +51,8 @@ search-adaccount -lockedout | unlock-adaccount
 ```
 Get-ADComputer -LDAPFilter '(operatingSystem=*Windows 7*)'  -Properties * | Select -Property Name,DNSHostName,operatingSystem | Export-CSV "C:\Users\%username%\Desktop\Windows7Computers.csv"
 ```
+
+* ### Disable Bing Search from Start Menu.
+```
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchEnabled" -Type DWord -Value 0
+```
