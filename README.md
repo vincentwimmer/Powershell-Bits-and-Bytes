@@ -54,5 +54,10 @@ Get-ADComputer -LDAPFilter '(operatingSystem=*Windows 7*)'  -Properties * | Sele
 
 * ### Disable Bing Search from Start Menu.
 ```
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchEnabled" -Type DWord -Value 0
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v BingSearchEnabled /t REG_DWORD /d 0 /f
+```
+
+* ### Disable Cortana Search from Start Menu.
+```
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v CortanaConsent /t REG_DWORD /d 0 /f
 ```
