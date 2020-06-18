@@ -61,3 +61,8 @@ reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v BingSearchEnabl
 ```
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v CortanaConsent /t REG_DWORD /d 0 /f
 ```
+
+* ### Move all contents of sub/folder(s) to another folder.
+```
+Get-ChildItem -Path "sourc" -Recurse -File | Move-Item -Destination "dest"
+```
