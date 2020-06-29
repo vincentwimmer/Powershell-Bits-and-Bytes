@@ -66,3 +66,8 @@ reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v CortanaConsent 
 ```
 Get-ChildItem -Path "sourc" -Recurse -File | Move-Item -Destination "dest"
 ```
+
+* ### Python - Update all libs.
+```
+pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+```
