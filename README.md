@@ -72,7 +72,7 @@ Get-ChildItem -Path "sourc" -Recurse -File | Move-Item -Destination "dest"
 pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
 ```
 
-* ### Get Weather based on IP.
+* ### Get Weather of current IP.
 ```
 Invoke-RestMethod https://wttr.in
 ```
