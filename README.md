@@ -1,5 +1,7 @@
 # Powershell-Bits-and-Bytes
 
+> One liners below:
+
 * ### Get CName from IPv4 Address:
 ```
 [System.Net.Dns]::GetHostByAddress('ip.add.re.ss').HostName
