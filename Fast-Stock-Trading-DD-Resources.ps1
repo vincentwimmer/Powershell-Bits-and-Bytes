@@ -1,5 +1,6 @@
   
 Write-Host @"
+----------------------------------------------------------------------------
 Welcome to Quick-Stock-DD-Resources V1.1.1
 This script utilizes Google Chrome and will find the input Stock ticker on:
 SEC, Barchart, MarcroAxis, WolframAlpha, Seeking Alpha, Google News, Reddit, 
