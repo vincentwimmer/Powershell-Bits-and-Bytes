@@ -1,4 +1,7 @@
-$fpath = "C:\Exchange\V14\Mailbox\Folder"
+# Created for occasionally clearing the notorious storage consuming Exchange logs.
+
+# You'll have to set the path here.
+$fpath = "D:\Exchange\Version\Mailbox\Folder"
 
 $obj = Get-ChildItem -path $fpath -include '*.log' -recurse | 
 Select Name,@{Name="NameLength";Expression={$_.name.length}}, @{Name="FileSize";Expression={$_.Length / 1kb}} | 
