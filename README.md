@@ -4,7 +4,7 @@
 
 * ### Get CName from IPv4 Address:
 ```
-[system.net.dns]::gethostentry('ip.add.re.ss')
+[System.Net.Dns]::GetHostEntry('ip.add.re.ss')
 ```
 > or
 ```
