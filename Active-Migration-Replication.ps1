@@ -2,7 +2,7 @@
 # The code will run as long as you need it to and will continuously find recently modified files and push them to the new fileshare as you switch clients over.
 
 $src = 'D:\OldLocat\' # Don't forget the \ after the path!
-$dest = 'Z:\Newcat\' # Don't forget the \ after the path!
+$dest = 'Z:\NewLocat\' # Don't forget the \ after the path!
 $MinutesSinceModified = 2 # Tune based on src size
 $SecondsTillLoop = 30 # Tune based on update frequency
 
@@ -16,5 +16,7 @@ while ($true) {
 			Write-Host "Moved Modified File:" $UpdatePath
 		}
 	}
+	$a = get-date
+	Write-Host "Loop Completed. Starting Next Loop." $a
 	Start-Sleep -Seconds $SecondsTillLoop
 }
