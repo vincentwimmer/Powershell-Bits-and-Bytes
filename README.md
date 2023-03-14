@@ -2,6 +2,11 @@
 
 ## One liners below:
 
+* ### Get all mail transactions in a date range from Exchange Shell to CSV:
+```
+Get-MessageTrackingLog -ResultSize Unlimited -Start "3/1/2023 8:00AM" -End "3/13/2023 5:00PM" | Export-Csv c:\temp\mail.csv
+```
+
 * ### Get CName from IPv4 Address:
 ```
 [System.Net.Dns]::GetHostEntry('ip.add.re.ss')
@@ -51,7 +56,7 @@ shutdown /s /t 0
 search-adaccount -lockedout | unlock-adaccount
 ```
 
-* ### Gather all Windows 7 computers in Active Directory and populate a spread sheet.
+* ### Gather all Windows 7 computers in Active Directory and dump to CSV.
 > Great for migrating from End-of-Life!
 ```
 Get-ADComputer -LDAPFilter '(operatingSystem=*Windows 7*)'  -Properties * | Select -Property Name,DNSHostName,operatingSystem | Export-CSV "C:\Users\%username%\Desktop\Windows7Computers.csv"
