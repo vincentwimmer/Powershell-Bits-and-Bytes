@@ -2,6 +2,11 @@
 
 ## One liners below:
 
+* ### Get AD Users' and last password change dates:
+```
+Get-ADUser -filter *  -properties PwdLastSet  | sort Name | ft Name,@{Name='PwdLastSet';Expression={[DateTime]::FromFileTime($_.PwdLastSet)}}
+```
+
 * ### Push Azure Sync Deltas:
 ```
 Start-ADSyncSyncCycle -PolicyType Delta
