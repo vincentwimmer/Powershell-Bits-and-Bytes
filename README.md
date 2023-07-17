@@ -2,6 +2,11 @@
 
 ## One liners below:
 
+* ### Add AAD user to local admins
+```
+net localgroup administrators AzureAD\USER /add
+```
+
 * ### Get AD Users' and last password change dates:
 ```
 Get-ADUser -filter *  -properties PwdLastSet  | sort Name | ft Name,@{Name='PwdLastSet';Expression={[DateTime]::FromFileTime($_.PwdLastSet)}}
