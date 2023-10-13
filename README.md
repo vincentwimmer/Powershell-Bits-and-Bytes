@@ -2,11 +2,18 @@
 
 ## Azure/M365 Shells:
 
+* ### Azure Active Directory Shellc
+```
+Import-Module AzureAD
+
+Connect-AzureAD
+```
+
 * ### Exchange Online Management Shell
 ```
 Import-Module ExchangeOnlineManagement
 
-Connect-ExchangeOnline -UserPrincipalName admin@contoso.onmicrosoft.com
+Connect-ExchangeOnline
 ```
 
 * ### SharePoint Online Management Shell
