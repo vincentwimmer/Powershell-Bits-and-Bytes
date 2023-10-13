@@ -1,6 +1,6 @@
 # Powershell-Bits-and-Bytes
 
-## Azure Shells:
+## Azure/M365 Shells:
 
 * ### Exchange Online Management Shell
 ```
