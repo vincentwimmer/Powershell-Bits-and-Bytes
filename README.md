@@ -1,6 +1,29 @@
 # Powershell-Bits-and-Bytes
 
-## One liners below:
+## Azure Shells:
+
+* ### Exchange Online Management Shell
+```
+Import-Module ExchangeOnlineManagement
+
+Connect-ExchangeOnline -UserPrincipalName admin@contoso.onmicrosoft.com
+```
+
+* ### SharePoint Online Management Shell
+```
+Import-Module Microsoft.Online.SharePoint.PowerShell
+
+Connect-SPOService -Url https://contoso-admin.sharepoint.com
+```
+
+* ### SharePoint Online PNP Shell
+```
+Import-Module PnP.PowerShell
+
+Connect-PnPOnline -Url "https://contoso.sharepoint.com" -Interactive
+```
+
+## One liners:
 
 * ### Add AAD user to local admins
 ```
