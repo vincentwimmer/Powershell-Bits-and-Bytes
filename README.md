@@ -2,7 +2,7 @@
 
 ## Azure/M365 Shells:
 
-* ### Azure Active Directory Shellc
+* ### Azure Active Directory Management Shell
 ```
 Import-Module AzureAD
 
