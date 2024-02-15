@@ -31,6 +31,10 @@ Connect-PnPOnline -Url "https://contoso.sharepoint.com" -Interactive
 ```
 
 ## One liners:
+* ### Get files modified since date
+```
+Get-ChildItem "D:\" -File -Recurse | Where-Object { $_.LastWriteTime -gt "01/15/2024" } | select-Object FullName, LastWriteTime
+```
 
 * ### Add AAD user to local admins
 ```
