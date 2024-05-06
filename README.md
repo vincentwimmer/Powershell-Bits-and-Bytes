@@ -31,6 +31,11 @@ Connect-PnPOnline -Url "https://contoso.sharepoint.com" -Interactive
 ```
 
 ## One liners:
+* ### Robocopy all folder contents to a network location and keep all ACL settings
+```
+robocopy "D:\" "\\HostName\Share" /E /ZB /DCOPY:T /COPYALL /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+```
+
 * ### Get files modified since date
 ```
 Get-ChildItem "D:\" -File -Recurse | Where-Object { $_.LastWriteTime -gt "01/15/2024" } | select-Object FullName, LastWriteTime
