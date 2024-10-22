@@ -30,6 +30,13 @@ Import-Module PnP.PowerShell
 Connect-PnPOnline -Url "https://contoso.sharepoint.com" -Interactive
 ```
 
+* ### Microsoft Online Shell
+```
+Import-Module MSOnline
+
+Connect-MSOLService
+```
+
 ## One liners:
 * ### Convert Windows Server Eval to Server Standard and activate with license
 ```
