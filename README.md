@@ -37,6 +37,15 @@ Import-Module MSOnline
 Connect-MSOLService
 ```
 
+* ### Microsoft Graph Shell
+```
+Import-Module Microsoft.Graph
+
+Connect-MgGraph
+
+A good break down of scopes and other useful connection options: https://lazyadmin.nl/powershell/connect-mggraph/
+```
+
 ## One liners:
 * ### Convert Windows Server Eval to Server Standard and activate with license
 ```
