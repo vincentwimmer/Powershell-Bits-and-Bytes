@@ -31,6 +31,11 @@ Connect-PnPOnline -Url "https://contoso.sharepoint.com" -Interactive
 ```
 
 ## One liners:
+* ### Convert Windows Server Eval to Server Standard and activate with license
+```
+DISM.exe /online /Set-Edition:ServerStandard /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula
+```
+
 * ### Robocopy all folder contents to a network location and keep all ACL settings
 ```
 robocopy "D:\" "\\HostName\Share" /E /ZB /DCOPY:T /COPYALL /R:1 /W:1 /V /TEE /LOG:Robocopy.log
