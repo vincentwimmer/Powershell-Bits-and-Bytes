@@ -51,3 +51,33 @@
 > ```
 > Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -ErrorAction SilentlyContinue
 > ```
+
+### Check for WSUS server
+> ```
+> Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -ErrorAction SilentlyContinue | Select-Object WUServer, WUStatusServer
+> ```
+
+### Check for WU Medic service - Shouldn't be Disabled
+> ```
+> Get-Service -Name WaaSMedicSvc | Select Name, StartType, Status
+> ```
+
+### Check for Windows Update restrictions
+> ```
+> Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -ErrorAction SilentlyContinue | Select-Object DisableWindowsUpdateAccess, DoNotConnectToWindowsUpdateInternetLocations
+> ```
+
+### Check Task Scheduler status
+> ```
+> Get-ScheduledTask -TaskPath "\Microsoft\Windows\WindowsUpdate\" | Select TaskName, State
+> ```
+
+### Dump GPO overrides
+> ```
+> gpresult /h c:\temp\gpresult.html
+> ```
+
+### Check for metered network - Metered networks stop auto-updates
+> ```
+> Get-NetConnectionProfile | Select-Object Name, ConnectionMetered
+> ```
