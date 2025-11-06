@@ -1,13 +1,13 @@
 # Powershell for Windows Updates
 
-### Get last 10 installed Windows updates:
+### Get last 10 installed updates:
 > ```
 > $Searcher.QueryHistory(0, $HistoryCount) | Sort-Object Date -Descending | Select-Object -First 10 Title, Date | ft
 > ```
 
 ---
 
-### Get most recent Windows Update statuses
+### Get most recent update statuses
 > ```
 > Get-WinEvent -ProviderName Microsoft-Windows-WindowsUpdateClient -MaxEvents 20 | Where-Object { $_.Id -in 19,25,31 } | Select-Object TimeCreated, Id, Message | ft
 > ```
@@ -41,3 +41,13 @@
 > | `AUOptions`    | 3              | Auto download, notify before install    |
 > | `AUOptions`    | 4              | Auto download & schedule install        |
 > | `AUOptions`    | 5              | Allow local admin to choose             |
+
+### Get Service status
+> ```
+> Get-Service -Name wuauserv | Select-Object Name, StartType, Status
+> ```
+
+### Check for GPO enforcements
+> ```
+> Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -ErrorAction SilentlyContinue
+> ```
