@@ -32,7 +32,7 @@
 > Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -ErrorAction SilentlyContinue | Select-Object NoAutoUpdate, AUOptions, ScheduledInstallDay, ScheduledInstallTime | ft
 > ```
 > 
-> | Value          | Key Name       | Meaning                                 |
+> | Key Name       | Value          | Meaning                                 |
 > | -------------- | -------------- | --------------------------------------- |
 > | `NoAutoUpdate` | 1              | **Disables automatic updates entirely** |
 > | `NoAutoUpdate` | 0 (or missing) | Automatic updates are allowed           |
