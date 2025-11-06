@@ -21,11 +21,19 @@ Get-WinEvent -ProviderName Microsoft-Windows-WindowsUpdateClient -MaxEvents 20 |
 
 ---
 
-Get recent Windows Hot-Fix installs:
+* ### Get recent Windows Hot-Fix installs:
+```
 Get-HotFix | Sort-Object InstalledOn -Descending | Select-Object -First 10 | ft
+```
 
+---
 
-Get registry settings
+* ### Get Registry Configuration
+
+```
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -ErrorAction SilentlyContinue | Select-Object NoAutoUpdate, AUOptions, ScheduledInstallDay, ScheduledInstallTime | ft
+```
+
 | Value          | Key Name       | Meaning                                 |
 | -------------- | -------------- | --------------------------------------- |
 | `NoAutoUpdate` | 1              | **Disables automatic updates entirely** |
@@ -35,5 +43,3 @@ Get registry settings
 | `AUOptions`    | 3              | Auto download, notify before install    |
 | `AUOptions`    | 4              | Auto download & schedule install        |
 | `AUOptions`    | 5              | Allow local admin to choose             |
-
-Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -ErrorAction SilentlyContinue | Select-Object NoAutoUpdate, AUOptions, ScheduledInstallDay, ScheduledInstallTime | ft
